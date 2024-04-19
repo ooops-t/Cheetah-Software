@@ -16,6 +16,7 @@
 #include <cstring>
 #include <stdexcept>
 #include <string>
+#include <time.h>
 
 #include "cTypes.h"
 

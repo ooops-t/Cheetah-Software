@@ -4,8 +4,8 @@ project(sim)
 SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 
-execute_process(COMMAND ${CMAKE_SOURCE_DIR}/scripts/find_qt_path.sh OUTPUT_VARIABLE CMAKE_PREFIX_PATH_1)
-SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH_1})
+# execute_process(COMMAND ${CMAKE_SOURCE_DIR}/scripts/find_qt_path.sh OUTPUT_VARIABLE CMAKE_PREFIX_PATH_1)
+# SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH_1})
 # message("CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 
 if(POLICY CMP0071)
@@ -36,7 +36,7 @@ QT5_WRAP_CPP(tst_hdr_moc ${QOBJECT_HEADERS})
 include_directories("include/")
 include_directories("../common/include/")
 include_directories("../lcm-types/cpp")
-include_directories("/usr/local/include/lcm/")   # lcm includes
+include_directories("/usr/include/lcm/")   # lcm includes
 include_directories("../third-party/ParamHandler")
 include_directories(${CMAKE_BINARY_DIR})
 file(GLOB sources "src/*.cpp")

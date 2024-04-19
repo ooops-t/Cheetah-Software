@@ -3,6 +3,8 @@
  * @brief Serial port
  */
 
+#include <sys/cdefs.h>
+// #include <sys/ioctl.h>
 #ifdef linux
 
 #include <errno.h>
@@ -21,7 +23,14 @@
 #include <termios.h>
 #include <math.h>
 #include <pthread.h>
+#if 0
 #include <stropts.h>
+#else
+// #include <sys/ioctl.h>
+extern "C" {
+  extern int ioctl(int fd, unsigned long request, ...) __THROW;
+}
+#endif
 #include <endian.h>
 #include <stdint.h>
 
